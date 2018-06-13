@@ -1,0 +1,14 @@
+version: '2'
+services:
+  petclinic-configserver:
+    image: 957582603404.dkr.ecr.ap-northeast-2.amazonaws.com/petclinic-configserver:latest
+    mem_limit: 1024m
+    mem_reservation: 512m
+    ports:
+      - "0:9468"
+    logging:
+      driver: awslogs
+      options:
+        awslogs-group: petclinic-configserver
+        awslogs-region: ap-northeast-2
+        awslogs-stream-prefix: petclinic
